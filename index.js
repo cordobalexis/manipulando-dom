@@ -1,23 +1,25 @@
+// const { createElement } = require("react");
+
 const cosasQueAprendimos = [
   {
     tema: "terminal",
-    class: "",
+    class: "uno",
   },
   {
     tema: "node",
-    class: "",
+    class: "dos",
   },
   {
     tema: "oop",
-    class: "",
+    class: "tres",
   },
   {
     tema: "typescript",
-    class: "",
+    class: "cuatro",
   },
   {
     tema: "css",
-    class: "",
+    class: "cinco",
   },
   {
     tema: "dom",
@@ -25,6 +27,19 @@ const cosasQueAprendimos = [
   },
 ];
 
-function main() {}
+function main() {
+  console.log("JS cargó");
+  const listaNueva = document.querySelector(".lista")
+  const lista = document.querySelectorAll(".lista li");
+  lista.forEach((p) => {
+    p.remove();
+  })
+  cosasQueAprendimos.forEach((item) => {
+    const li = document.createElement("li");
+    li.textContent = item.tema;
+    li.className = item.class;
+    listaNueva.appendChild(li);
+  })
+}
 
 main();
